@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>樱木 | Account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: #f2f5fa;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            min-height: 100vh;
+            position: relative;
+            background-image: url('accountbg1.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.4);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Header - Unified Style */
+        /* Header styles removed to use main style.css */
+
+        /* Logo and nav styles removed to use main style.css */
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .cart-icon {
+            position: relative;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+
+
+        /* Rest of your styles */
+        :root {
+            --color-1: #f2f5fa;
+            --color-2: #ffffff;
+            --color-3: #d0d7e1;
+            --color-4: #f1f4f9;
+            --color-5: #ecedf5;
+            --text-dark: #333;
+            --text-light: #666;
+            --accent: #001f3f;
+            /* Navy blue */
+            --accent-hover: #003366;
+            /* Darker navy blue */
+            --accent-light: #5d8bf4;
+            /* Lighter blue */
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --gold-gradient: linear-gradient(135deg, #001f3f 0%, #5d8bf4 100%);
+            /* Navy blue gradient */
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            25% {
+                background-position: 100% 0%;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+
+            75% {
+                background-position: 0% 100%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: float linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+
+            100% {
+                transform: translateY(-100vh) translateX(0);
+            }
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 31, 63, 0.1) 0%, rgba(0, 31, 63, 0) 70%);
+            /* Navy blue */
+            animation: drift linear infinite;
+            opacity: 0.4;
+        }
+
+        @keyframes drift {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(100px, 100px) rotate(360deg);
+            }
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(0, 31, 63, 0.05);
+            /* Navy blue */
+            top: 50%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            animation: pulse 8s infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(0, 31, 63, 0.03);
+            /* Navy blue */
+            bottom: 10%;
+            right: 15%;
+            animation: pulse 6s infinite 1s;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.15;
+            }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 55px;
+            line-height: 1.2;
+            color: #ffffff;
+            font-family: 'Georgia', serif;
+            letter-spacing: -0.5px;
+            position: relative;
+            margin-top: 21px;
+        }
+
+        .page-title span {
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+
+        .page-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--accent-light));
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: underlineExpand 1s 0.5s forwards;
+        }
+
+        @keyframes underlineExpand {
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        .contact-desc {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 1.7;
+            max-width: 600px;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btn {
+            padding: 15px 35px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+            font-family: 'Georgia', serif;
+            letter-spacing: 0.5px;
+        }
+
+        .primary-btn {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 31, 63, 0.3);
+            /* Navy blue */
+        }
+
+        .secondary-btn {
+            background: transparent;
+            border: 1px solid var(--color-3);
+            color: var(--text-dark);
+        }
+
+        .hero-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+            z-index: -1;
+        }
+
+        .primary-btn::after {
+            background: var(--accent-hover);
+        }
+
+        .secondary-btn::after {
+            background: var(--color-3);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 31, 63, 0.4);
+            /* Navy blue */
+        }
+
+        .hero-btn:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Enhanced Forms Container */
+        .forms-container {
+            padding: 100px 5% 150px;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-section {
+            flex: 1;
+            min-width: 500px;
+            background: var(--color-2);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+            position: relative;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: var(--transition);
+        }
+
+        .form-section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .form-header {
+            padding: 40px 40px 20px;
+            background: var(--color-5);
+            background: linear-gradient(135deg, rgba(236, 237, 245, 0.9) 0%, rgba(241, 244, 249, 0.9) 100%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .form-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-family: 'Georgia', serif;
+        }
+
+        .form-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .form-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent), var(--accent-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+
+        .form-section:hover .form-header::after {
+            transform: scaleX(1);
+        }
+
+        .form-container {
+            padding: 30px 40px 40px;
+        }
+
+        .mandatory-note {
+            color: #d9534f;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            display: block;
+            font-family: 'Georgia', serif;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .input-with-icon {
+            position: relative;
+        }
+
+        .input-with-icon i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 1px solid var(--color-3);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--color-4);
+            background: rgba(241, 244, 249, 0.6);
+            color: var(--text-dark);
+            font-family: 'Georgia', serif;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--color-2);
+            box-shadow: 0 0 0 3px rgba(0, 31, 63, 0.1);
+            /* Navy blue */
+        }
+
+        input:focus+i {
+            color: var(--accent);
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+
+        .toggle-password:hover {
+            color: var(--accent);
+        }
+
+        .password-requirements {
+            margin-top: 10px;
+            padding: 15px;
+            background: var(--color-4);
+            background: rgba(241, 244, 249, 0.6);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-left: 3px solid var(--accent);
+            transition: var(--transition);
+        }
+
+        .password-requirements ul {
+            padding-left: 20px;
+            margin-top: 5px;
+            list-style: none;
+        }
+
+        .password-requirements li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .password-requirements li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #5cb85c;
+            font-weight: bold;
+        }
+
+        .password-requirements li.invalid::before {
+            content: '✕';
+            color: #d9534f;
+        }
+
+        .birthday-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .birthday-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        .birthday-row select {
+            padding: 15px;
+            background-position: right 10px center;
+        }
+
+        .submit-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: var(--transition);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-family: 'Georgia', serif;
+        }
+
+        .submit-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+            z-index: -1;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 31, 63, 0.3);
+            /* Navy blue */
+        }
+
+        .submit-btn:hover::after {
+            transform: scaleX(1);
+        }
+
+        .form-footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-family: 'Georgia', serif;
+        }
+
+        .form-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .form-footer a::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .form-footer a:hover::after {
+            width: 100%;
+        }
+
+        /* Premium Features Section */
+        .features-section {
+            padding: 80px 5%;
+            background: linear-gradient(to bottom, rgba(242, 245, 250, 0.8), rgba(255, 255, 255, 0.95));
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            color: #ffffff;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent), var(--accent-light));
+        }
+
+        .section-header p {
+            color: #ffffff;
+            font-size: 1.3rem;
+            line-height: 1.7;
+            font-family: 'Georgia', serif;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            text-align: center;
+            padding: 40px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent), var(--accent-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 20px rgba(0, 31, 63, 0.2);
+            /* Navy blue */
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-family: 'Georgia', serif;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 1.1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 31, 63, 0.3);
+            /* Navy blue */
+            z-index: 99;
+            font-size: 1.2rem;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Scroll Down Button */
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-light);
+            cursor: pointer;
+            z-index: 2;
+            transition: var(--transition);
+            font-family: 'Georgia', serif;
+        }
+
+        .scroll-down:hover {
+            color: var(--accent);
+        }
+
+        .scroll-down span {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .scroll-down i {
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Form Highlight */
+        .form-highlight {
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: var(--accent);
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 1s ease;
+        }
+
+        .form-section:hover .form-highlight {
+            transform: scaleX(1);
+        }
+
+        /* Responsive design */
+        @media (max-width: 1100px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+
+            .hero-text p {
+                margin: 0 auto 40px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .forms-container {
+                padding: 80px 5% 100px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .form-section {
+                min-width: 100%;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .page-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .forms-container {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .form-section {
+                padding-left: 4px;
+                padding-right: 4px;
+            }
+            .birthday-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .page-title {
+                font-size: 2.2rem;
+            }
+            .contact-desc {
+                font-size: 1rem;
+            }
+            .hero-btn {
+                padding: 12px 25px;
+            }
+            .form-header {
+                padding: 30px 20px 15px;
+            }
+            .form-container {
+                padding: 20px;
+            }
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-group {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .form-group:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .form-group:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .form-group:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .form-group:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .form-group:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .form-group:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .form-group:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .submit-btn {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .feature-card {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .footer {
+            background-image: url('images/footerbg.jpg');
+            padding: 60px 20px 40px;
+            border-top: 1px solid #e6e6e6;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-copy1 {
+            font-size: 0.9rem;
+            color: #000000;
+        }
+
+        .footer-copy2 {
+            font-size: 0.85rem;
+            color: #3c3636;
+            line-height: 150%;
+        }
+
+        .footer-copy3 {
+            font-size: 0.8rem;
+            color: #696565;
+        }
+
+        .contact-desc {
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            margin-top: 18px;
+            text-shadow: 0 2px 8px #0c2340;
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .premium-benefits-section {
+            background: linear-gradient(to right, #f9f9fb, #ffffff);
+            padding: 80px 20px;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0a0a0a;
+            font-family: 'Georgia', serif;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #ffffff;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .benefit-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: #0077cc;
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .benefit-description {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            font-family: Georgia, serif !important;
+            font-weight: 550;
+            font-size: 2rem;
+            color: #111;
+        }
+
+        .benefit-icon i {
+            color: #000042;
+        }
+
+        .section-header .section-title,
+        .section-header .section-subtitle {
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .premium-benefits-section {
+            background: url('images/minibg.jpeg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 0;
+        }
+
+        .premium-benefits-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .premium-benefits-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            /* gentle dark overlay */
+            backdrop-filter: blur(6px);
+            z-index: 1;
+        }
+
+        .premium-benefits-section>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Enhanced Animated Background -->
+    <div class="background-container">
+        <div class="animated-bg"></div>
+        <div class="particles" id="particles"></div>
+        <div class="floating-shapes" id="shapes"></div>
+    </div>
+
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit;">樱木</a>
+        </div>
+        <button class="menu-icon" id="menuToggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+        <nav class="nav-links" id="mainNav">
+            <a href="shop.html">SHOP</a>
+            <a href="stores.html">STORES</a>
+            <a href="about.html">ABOUT</a>
+            <a href="account.html">ACCOUNT</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        <div class="nav-icons">
+            <form class="search-form" action="">
+                <input type="search" autofocus required placeholder="Search...">
+                <i class="fa fa-search"></i>
+                <button type="button" onclick="clearInput()">Clear</button>
+            </form>
+            <a href="wishlist.html" class="wishlist-icon" title="Wishlist"><i class="fa fa-heart"></i></a>
+            <a href="cart.html" class="cart-icon">&#128722;<span class="cart-count">0</span></a>
+        </div>
+        <div class="icon-grid">
+            <form class="search-form mobile-search-form" action="">
+                <input type="search" autofocus required placeholder="Search...">
+                <i class="fa fa-search"></i>
+                <button type="button" onclick="clearInput()">Clear</button>
+            </form>
+            <a href="wishlist.html" class="wishlist-icon mobile-wishlist-icon" title="Wishlist"><i
+                    class="fa fa-heart"></i></a>
+            <a href="cart.html" class="cart-icon">&#128722;<span class="cart-count">0</span></a>
+            <div class="mobile-menu-icon" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="mobile-dropdown" id="mobileDropdown">
+                <div class="mobile-dropdown-header">
+                    <button class="mobile-close-btn" id="mobileCloseBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <ul class="mobile-menu-list">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="stores.html">Stores</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="account.html">Account</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+
+    <!-- Enhanced Hero Section -->
+    <section class="hero"
+        style="height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-image:url('images/accountbg3.jpg');background-size:cover;background-position:center;margin-top:80px;position:relative;">
+        <div
+            style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;">
+            <div class="page-title">Experience Premium Membership</div>
+            <p class="contact-desc">Unlock exclusive perks and early access<br>with a personalized shopping
+                experience—just for you.</p>
+        </div>
+    </section>
+
+    <!-- Forms Container -->
+    <div class="forms-container" id="formsSection">
+        <!-- Signup Form -->
+        <div class="form-section" id="signupFormSection">
+            <div class="form-highlight"></div>
+            <div class="form-header">
+                <h2 class="section-title">Create Your Account</h2>
+                <p>Join our exclusive community to enjoy personalized services</p>
+            </div>
+
+            <div class="form-container">
+                <span class="mandatory-note">* All fields are mandatory</span>
+
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user-tag"></i>
+                            <select id="title" name="title" required>
+                                <option value="" disabled selected>Select title</option>
+                                <option value="mr">Mr.</option>
+                                <option value="mrs">Mrs.</option>
+                                <option value="ms">Ms.</option>
+                                <option value="miss">Miss</option>
+                                <option value="dr">Dr.</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Mobile Phone</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="localName">Local Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="localName" name="localName" placeholder="Enter your local name"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-with-icon password-container">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="Create a password"
+                                required>
+                            <span class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+
+                        <div class="password-requirements">
+                            <p>Password must contain:</p>
+                            <ul>
+                                <li id="lengthReq">At least 8 characters</li>
+                                <li id="digitReq">At least one digit (0-9)</li>
+                                <li id="upperReq">At least one uppercase letter (A-Z)</li>
+                                <li id="specialReq">One special character (@#$%^&+/-=)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birthday">Birthday</label>
+                        <div class="birthday-row">
+                            <div class="form-group">
+                                <select id="birthMonth" name="birthMonth" required>
+                                    <option value="" disabled selected>Month</option>
+                                    <option value="01">January</option>
+                                    <option value="02">February</option>
+                                    <option value="03">March</option>
+                                    <option value="04">April</option>
+                                    <option value="05">May</option>
+                                    <option value="06">June</option>
+                                    <option value="07">July</option>
+                                    <option value="08">August</option>
+                                    <option value="09">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select id="birthDay" name="birthDay" required>
+                                    <option value="" disabled selected>Day</option>
+                                    <!-- Days will be populated by JS -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select id="birthYear" name="birthYear" required>
+                                    <option value="" disabled selected>Year</option>
+                                    <!-- Years will be populated by JS -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">CREATE ACCOUNT</button>
+                </form>
+
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" id="loginFormLink">Sign in</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form-section" id="loginFormSection">
+            <div class="form-highlight"></div>
+            <div class="form-header">
+                <h2 class="section-title">Welcome Back</h2>
+                <p>Sign in to access your account and benefits</p>
+            </div>
+
+            <div class="form-container">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <div class="input-with-icon password-container">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="loginPassword" name="password" placeholder="Enter your password"
+                                required>
+                            <span class="toggle-password" id="toggleLoginPassword">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-footer" style="text-align: left; margin-top: -10px;">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">SIGN IN</button>
+                </form>
+
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" id="signupFormLink">Create one</a></p>
+                    <p style="margin-top: 15px;">By signing in, you agree to our <a href="#">Terms & Conditions</a> and
+                        <a href="#">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Membership Benefits Section -->
+    <section class="premium-benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><I>Unlock Premium Privileges</I></h2>
+                <p class="section-subtitle">Enjoy an elite experience crafted exclusively for our most valued members
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="benefit-title">Exclusive Offers</h3>
+                    <p class="benefit-description">Access member-only discounts and get early access to new drops before
+                        the public release.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="benefit-title">Free Express Shipping</h3>
+                    <p class="benefit-description">Complimentary priority shipping on every order—delivered within 48
+                        hours, guaranteed.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                    <h3 class="benefit-title">Tailored Assistance</h3>
+                    <p class="benefit-description">Get a dedicated style advisor and receive recommendations curated
+                        just for you.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="benefit-title">Access to VIP Events</h3>
+                    <p class="benefit-description">Attend private launches, invite-only previews, and member-exclusive
+                        experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to top button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Create particles for background
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 60; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Random size
+                const size = Math.random() * 3 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100 + 100}%`;
+
+                // Random animation duration
+                const duration = Math.random() * 30 + 20;
+                particle.style.animationDuration = `${duration}s`;
+
+                // Random animation delay
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+
+                particlesContainer.appendChild(particle);
+            }
+
+            // Create floating shapes
+            const shapesContainer = document.getElementById('shapes');
+            for (let i = 0; i < 8; i++) {
+                const shape = document.createElement('div');
+                shape.classList.add('shape');
+
+                // Random size
+                const size = Math.random() * 400 + 100;
+                shape.style.width = `${size}px`;
+                shape.style.height = `${size}px`;
+
+                // Random position
+                shape.style.left = `${Math.random() * 100}%`;
+                shape.style.top = `${Math.random() * 100}%`;
+
+                // Random animation
+                const duration = Math.random() * 100 + 80;
+                shape.style.animationDuration = `${duration}s`;
+
+                shapesContainer.appendChild(shape);
+            }
+
+            // Populate day and year dropdowns
+            const daySelect = document.getElementById('birthDay');
+            const yearSelect = document.getElementById('birthYear');
+            const currentYear = new Date().getFullYear();
+
+            // Populate days (1-31)
+            for (let i = 1; i <= 31; i++) {
+                const option = document.createElement('option');
+                option.value = i < 10 ? '0' + i : i;
+                option.textContent = i;
+                daySelect.appendChild(option);
+            }
+
+            // Populate years (1900-current year)
+            for (let i = currentYear; i >= 1900; i--) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                yearSelect.appendChild(option);
+            }
+
+            // Password toggle visibility
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+            const toggleLoginPassword = document.getElementById('toggleLoginPassword');
+            const loginPasswordInput = document.getElementById('loginPassword');
+
+            togglePassword.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+            });
+
+            toggleLoginPassword.addEventListener('click', function () {
+                const type = loginPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                loginPasswordInput.setAttribute('type', type);
+                this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+            });
+
+            // Password validation
+            passwordInput.addEventListener('input', function () {
+                validatePassword();
+            });
+
+            function validatePassword() {
+                const password = passwordInput.value;
+
+                // Reset requirements
+                document.getElementById('lengthReq').classList.remove('invalid');
+                document.getElementById('digitReq').classList.remove('invalid');
+                document.getElementById('upperReq').classList.remove('invalid');
+                document.getElementById('specialReq').classList.remove('invalid');
+
+                // Check length
+                if (password.length < 8) {
+                    document.getElementById('lengthReq').classList.add('invalid');
+                }
+
+                // Check digit
+                if (!/\d/.test(password)) {
+                    document.getElementById('digitReq').classList.add('invalid');
+                }
+
+                // Check uppercase
+                if (!/[A-Z]/.test(password)) {
+                    document.getElementById('upperReq').classList.add('invalid');
+                }
+
+                // Check special character
+                if (!/[@#$%^&+\/\-=]/.test(password)) {
+                    document.getElementById('specialReq').classList.add('invalid');
+                }
+            }
+
+            // Form submission
+            const signupForm = document.getElementById('signupForm');
+            const loginForm = document.getElementById('loginForm');
+
+            signupForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Check if password is valid
+                const password = passwordInput.value;
+                const isValid = password.length >= 8 &&
+                    /\d/.test(password) &&
+                    /[A-Z]/.test(password) &&
+                    /[@#$%^&+\/\-=]/.test(password);
+
+                if (!isValid) {
+                    alert('Please ensure your password meets all requirements.');
+                    return;
+                }
+
+                // Form submission animation
+                const submitBtn = this.querySelector('.submit-btn');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
+                submitBtn.disabled = true;
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = 'ACCOUNT CREATED <i class="fas fa-check"></i>';
+                    submitBtn.style.background = '#5cb85c';
+
+                    setTimeout(() => {
+                        alert('Account created successfully! Welcome to 樱木.');
+                        signupForm.reset();
+                        submitBtn.innerHTML = 'CREATE ACCOUNT';
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                    }, 1000);
+                }, 1500);
+            });
+
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const submitBtn = this.querySelector('.submit-btn');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+                submitBtn.disabled = true;
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = 'WELCOME BACK <i class="fas fa-check"></i>';
+                    submitBtn.style.background = '#5cb85c';
+
+                    setTimeout(() => {
+                        alert('Login successful! Welcome back to your Name account.');
+                        loginForm.reset();
+                        submitBtn.innerHTML = 'SIGN IN';
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                    }, 1000);
+                }, 1500);
+            });
+
+            // Back to top button
+            const backToTopBtn = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+
+                // Header scroll effect
+                const header = document.querySelector('.header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Scroll to forms functionality
+            const formsSection = document.getElementById('formsSection');
+            const signupFormSection = document.getElementById('signupFormSection');
+            const loginFormSection = document.getElementById('loginFormSection');
+            const scrollDownBtn = document.getElementById('scrollDownBtn');
+            const heroSignupBtn = document.getElementById('heroSignupBtn');
+            const signupFormLink = document.getElementById('signupFormLink');
+            const loginFormLink = document.getElementById('loginFormLink');
+
+            // Scroll to forms section
+            scrollDownBtn.addEventListener('click', function () {
+                formsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Scroll to signup form
+            function scrollToSignup() {
+                signupFormSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                signupFormSection.style.animation = 'pulse 1s';
+                setTimeout(() => {
+                    signupFormSection.style.animation = '';
+                }, 1000);
+            }
+
+            // Scroll to login form
+            function scrollToLogin() {
+                loginFormSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                loginFormSection.style.animation = 'pulse 1s';
+                setTimeout(() => {
+                    loginFormSection.style.animation = '';
+                }, 1000);
+            }
+
+            // Add pulse animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes pulse {
+                    0% { box-shadow: 0 0 0 0 rgba(0, 31, 63, 0.4); }
+                    70% { box-shadow: 0 0 0 15px rgba(0, 31, 63, 0); }
+                    100% { box-shadow: 0 0 0 0 rgba(0, 31, 63, 0); }
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Event listeners for buttons
+            heroSignupBtn.addEventListener('click', scrollToSignup);
+            signupFormLink.addEventListener('click', scrollToLogin);
+            loginFormLink.addEventListener('click', scrollToSignup);
+
+            // Add smooth animation to form elements
+            const formGroups = document.querySelectorAll('.form-group');
+            formGroups.forEach((group, index) => {
+                group.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            // Feature card animations
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            // Header scroll effect
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // Cart count update
+            function updateCartCount() {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const count = cart.reduce((total, item) => total + item.quantity, 0);
+                document.querySelectorAll('.cart-count').forEach(el => el.textContent = count);
+            }
+            updateCartCount();
+
+            // Clear input utility
+            function clearInput() {
+                const input = document.querySelector('.search-form input[type="search"]');
+                if (input) input.value = "";
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('mainNav');
+            const menuOverlay = document.getElementById('menuOverlay');
+            menuToggle.addEventListener('click', function () {
+                navLinks.classList.toggle('open');
+                menuOverlay.classList.toggle('active');
+            });
+            menuOverlay.addEventListener('click', function () {
+                navLinks.classList.remove('open');
+                menuOverlay.classList.remove('active');
+            });
+
+            // Mobile dropdown menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileDropdown = document.getElementById('mobileDropdown');
+            const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+
+            if (mobileMenuToggle && mobileDropdown) {
+                mobileMenuToggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    mobileDropdown.classList.toggle('show');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (!mobileMenuToggle.contains(e.target) && !mobileDropdown.contains(e.target)) {
+                        mobileDropdown.classList.remove('show');
+                    }
+                });
+            }
+
+            if (mobileCloseBtn) {
+                mobileCloseBtn.addEventListener('click', function () {
+                    mobileDropdown.classList.remove('show');
+                });
+            }
+        });
+    </script>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">樱木</a></div>
+            <br>
+            <p class="footer-copy1">
+                Contact us | 012-345 6789 | yingmuclothing@gmail.com
+                <i class='bx bxl-instagram-alt'></i><i class='bx bxl-facebook bx-xs'></i><i
+                    class='bx bxl-twitter bx-xs'></i><i class='bx bxs-phone bx-xs'></i><i class='bx bxl-tiktok'></i>
+            </p>
+            <br>
+            <p class="footer-copy2">FAQs<br>Terms & Conditions<br>Explore More</p>
+            <br><br>
+            <p class="footer-copy3">&copy; 2025 樱木. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

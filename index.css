@@ -1,0 +1,231 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: 'Georgia', serif;
+    background-color: #ffffff;
+    color: #fff; /* Dior navy */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }  
+  
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: #fff;
+    transition: backdrop-filter 0.4s, background-color 0.4s;
+    z-index: 100;
+  }  
+
+  .header.scrolled {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }  
+  
+  .header.visible {
+    opacity: 1;
+    pointer-events: all;
+  }  
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #0c2340;
+  }
+  
+  .icon {
+    font-size: 1.2rem;
+    color: #0c2340;
+    cursor: pointer;
+  }
+  
+  .hero {
+    background: url('images/fall2025.jpg') no-repeat center center/cover;
+    /* height: 100vh; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .overlay {
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .overlay h1 {
+    color: #ffffff !important;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }  
+  
+  
+  .explore-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    color: #ffffff;
+    background-color: #0c2340; /* Navy blue */
+    border: 1px solid #0c2340;
+    border: 1px solid #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .explore-btn:hover {
+    background-color: transparent;
+    color: #0c2340;
+  }
+  
+  /* Scroll Down Indicator */
+  .scroll-down {
+    position: absolute;
+    bottom: 40px;
+    font-size: 1.8rem;
+    color: #fff;
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
+  
+  /* Fade-in Animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Next Section */
+  .next-section {
+    padding: 100px 20px;
+    background-color: #111;
+    text-align: center;
+  }
+  
+  .next-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .next-section p {
+    font-size: 1rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .overlay h1 {
+      font-size: 2rem;
+    }
+  
+    .explore-btn {
+      font-size: 0.9rem;
+      padding: 8px 20px;
+    }
+  
+    .logo {
+      font-size: 1.5rem;
+    }
+  
+    .icon {
+      font-size: 1rem;
+    }
+  }
+  
+  .overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #0c2340;
+  }
+  
+  .explore-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    color: #ffffff;
+    background-color: #0c2340;
+    border: 1px solid #0c2340;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .explore-btn:hover {
+    background: transparent;
+    color: #0c2340;
+  }
+
+  .scroll-down {
+    position: absolute;
+    bottom: 40px;
+    font-size: 1.8rem;
+    color: #0c2340;
+    animation: bounce 2s infinite;
+  }
+
+  .next-section {
+    padding: 100px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+  }
+  
+  .next-section h2 {
+    font-size: 2rem;
+    color: #0c2340;
+    margin-bottom: 20px;
+  }
+  
+  .next-section p {
+    font-size: 1rem;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .overlay-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* You can increase opacity for darker effect */
+    z-index: 1;
+  }
+
+  .overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px;
+  }
+  

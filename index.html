@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>"Name" | Fall 2025</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="shopstyle.css" /> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html" style="text-decoration: none; color: inherit;">樱木</a>
+    </div>
+    <button class="menu-icon" id="menuToggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+    <nav class="nav-links" id="mainNav">
+      <a href="shop.html">SHOP</a>
+      <a href="stores.html">STORES</a>
+      <a href="about.html">ABOUT</a>
+      <a href="account.html">ACCOUNT</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <div class="nav-icons">
+      <form class="search-form" action="">
+        <input type="search" autofocus required placeholder="Search...">
+        <i class="fa fa-search"></i>
+        <button type="button" onclick="clearInput()">Clear</button>
+      </form>
+      <a href="wishlist.html" class="wishlist-icon" title="Wishlist"><i class="fa fa-heart"></i></a>
+      <a href="cart.html" class="cart-icon">&#128722;<span class="cart-count">0</span></a>
+    </div>
+    <div class="icon-grid">
+      <form class="search-form mobile-search-form" action="">
+        <input type="search" autofocus required placeholder="Search...">
+        <i class="fa fa-search"></i>
+        <button type="button" onclick="clearInput()">Clear</button>
+      </form>
+      <a href="wishlist.html" class="wishlist-icon mobile-wishlist-icon" title="Wishlist"><i
+          class="fa fa-heart"></i></a>
+      <a href="cart.html" class="cart-icon">&#128722;<span class="cart-count">0</span></a>
+      <div class="mobile-menu-icon" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="mobile-dropdown" id="mobileDropdown">
+        <div class="mobile-dropdown-header">
+          <button class="mobile-close-btn" id="mobileCloseBtn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <ul class="mobile-menu-list">
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="stores.html">Stores</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu-overlay" id="menuOverlay"></div>
+
+  <!-- LUXURY HERO (merged with original hero) -->
+  <section class="hero video-hero luxury-hero">
+    <video autoplay muted loop playsinline class="video-bg">
+      <source src="images/model_video_fixed.mp4" type="video/mp4" />
+    </video>
+    <div class="video-gradient-overlay"></div>
+    <div class="overlay animate-hero">
+      <h1 class="luxury-title animate-fade-up">Timeless Elegance.<br>Modern Spirit.</h1>
+      <p class="luxury-subtitle animate-fade-up" style="animation-delay:0.2s">Discover the new 樱木 collection.</p>
+      <a href="shop.html" class="explore-btn luxury-btn animate-fade-up" style="animation-delay:0.4s">Shop the
+        Collection</a>
+    </div>
+    <div class="scroll-down-indicator">
+      <span>Scroll Down</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- BRAND STATEMENT -->
+  <section class="brand-statement">
+    <p class="scroll-float">Where tradition meets innovation.<br>Crafted for those who appreciate the art of simplicity.
+    </p>
+  </section>
+
+  <!-- FEATURED COLLECTION -->
+  <section class="featured-collection">
+    <div class="featured-row">
+      <div class="featured-item scroll-scale stagger-1">
+        <img src="images/jp8.jpg" alt="Signature Piece 1" />
+        <div class="featured-overlay">Signature Piece</div>
+      </div>
+      <div class="featured-item scroll-scale stagger-2">
+        <img src="images/jp12.jpg" alt="Signature Piece 2" />
+        <div class="featured-overlay">Limited Edition</div>
+      </div>
+      <div class="featured-item scroll-scale stagger-3">
+        <img src="images/jp9.jpg" alt="Signature Piece 3" />
+        <div class="featured-overlay">New Arrival</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL/STORY SECTION -->
+  <section class="editorial-section" style="padding-bottom: 50px;">
+    <h2 class="scroll-animate animate">The House of 樱木</h2>
+    <p class="editorial-text scroll-float animate">At 樱木, we believe in the power of timeless design and the beauty of modern
+      simplicity. Our collections are crafted for those who seek elegance in every detail and value the artistry of fine
+      materials. Each piece is a testament to our commitment to quality, innovation, and the enduring spirit of style.
+    </p>
+    <blockquote class="founder-quote scroll-fade-scale animate">"Luxury is in each detail."</blockquote>
+  </section>
+
+  <!-- TWO IMAGES SIDE BY SIDE SECTION -->
+  <section class="side-by-side-images" style="display:flex;justify-content:center;align-items:center;padding:0 0 90px 0;background:#fff;">
+    <img src="images/jp1.jpg" alt="Side Image 1" style="width:25%;margin-right:2%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+    <img src="images/jp2.jpg" alt="Side Image 2" style="width:25%;margin-left:2%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+  </section>
+
+  <!-- RESTORED ORIGINAL SECTIONS -->
+  <section class="side-by-side-images" style="display:flex;justify-content:center;align-items:center;padding:0 0 90px 0;background:#fff;">
+    <img src="images/jp5.jpg" alt="Side Image 1" style="width:35%;margin-right:1.5%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+    <img src="images/jp6.jpg" alt="Side Image 2" style="width:35%;margin-left:1.5%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+  </section>
+
+  <!-- Removed third-hero section here -->
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">樱木</a></div>
+      <br>
+      <p class="footer-copy1">
+        Contact us | 012-345 6789 | yingmuclothing@gmail.com
+      </p>
+      <br>
+      <p class="footer-copy2">FAQs<br>Terms & Conditions<br>Explore More</p>
+      <br><br>
+      <p class="footer-copy3">&copy; 2025 樱木. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+
+  <script>
+    // Smooth scroll for "Explore" button (if present)
+    document.addEventListener('DOMContentLoaded', function () {
+      var exploreBtn = document.querySelector('.explore-btn:not(.luxury-btn)');
+      if (exploreBtn) {
+        exploreBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+      // Header scroll effect
+      const header = document.querySelector('.header');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+      });
+      // Cart count update
+      function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const count = cart.reduce((total, item) => total + item.quantity, 0);
+        document.querySelectorAll('.cart-count').forEach(el => el.textContent = count);
+      }
+      updateCartCount();
+
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with scroll animation classes
+      const animatedElements = document.querySelectorAll('.scroll-animate, .scroll-slide-left, .scroll-slide-right, .scroll-scale, .scroll-fade-scale, .scroll-float');
+      animatedElements.forEach(el => observer.observe(el));
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTopBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      });
+      backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('mainNav');
+      const menuOverlay = document.getElementById('menuOverlay');
+      menuToggle.addEventListener('click', function () {
+        navLinks.classList.toggle('open');
+        menuOverlay.classList.toggle('active');
+      });
+      menuOverlay.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        menuOverlay.classList.remove('active');
+      });
+
+      // Mobile dropdown menu toggle
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileDropdown = document.getElementById('mobileDropdown');
+      const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+
+      if (mobileMenuToggle && mobileDropdown && mobileCloseBtn) {
+        mobileMenuToggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          mobileDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+          if (!mobileMenuToggle.contains(e.target) && !mobileDropdown.contains(e.target)) {
+            mobileDropdown.classList.remove('show');
+          }
+        });
+
+        mobileCloseBtn.addEventListener('click', function () {
+          mobileDropdown.classList.remove('show');
+        });
+      }
+    });
+  </script>
+  <script>
+    const clearInput = () => {
+      const input = document.querySelector('.search-form input[type="search"]');
+      if (input) input.value = "";
+    }
+  </script>
+</body>
+
+</html>

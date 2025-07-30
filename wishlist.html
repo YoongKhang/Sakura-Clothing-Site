@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Wishlist | 樱木</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="shopstyle.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html" style="text-decoration: none; color: inherit;">樱木</a>
+    </div>
+    <button class="menu-icon" id="menuToggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+    <nav class="nav-links" id="mainNav">
+      <a href="shop.html">SHOP</a>
+      <a href="stores.html">STORES</a>
+      <a href="about.html">ABOUT</a>
+      <a href="account.html">ACCOUNT</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <div class="nav-icons">
+      <form class="search-form" action="">
+        <input type="search" autofocus required placeholder="Search...">
+        <i class="fa fa-search"></i>
+        <button type="button" onclick="clearInput()">Clear</button>
+      </form>
+      <a href="wishlist.html" class="wishlist-icon" title="Wishlist"><i class="fa fa-heart"></i></a>
+      <a href="cart.html" class="cart-icon">&#128722;<span class="cart-count">0</span></a>
+    </div>
+    <div class="icon-grid">
+      <form class="search-form mobile-search-form" action="">
+        <input type="search" autofocus required placeholder="Search...">
+        <i class="fa fa-search"></i>
+        <button type="button" onclick="clearInput()">Clear</button>
+      </form>
+      <a href="wishlist.html" class="wishlist-icon mobile-wishlist-icon" title="Wishlist"><i class="fa fa-heart"></i></a>
+      <a href="cart.html" class="cart-icon">&#128722;<span class="cart-count">0</span></a>
+      <div class="mobile-menu-icon" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="mobile-dropdown" id="mobileDropdown">
+        <div class="mobile-dropdown-header">
+          <button class="mobile-close-btn" id="mobileCloseBtn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <ul class="mobile-menu-list">
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="stores.html">Stores</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu-overlay" id="menuOverlay"></div>
+
+  <main class="wishlist-container" style="margin-top: 90px; min-height: 60vh;">
+    <h1 class="wishlist-title" style="text-align:center; font-weight:400; margin-bottom:32px;">My Wishlist</h1>
+    <div class="wishlist-content">
+      <div class="wishlist-items-grid" id="wishlistGrid"></div>
+      <div class="empty-wishlist-message" id="emptyWishlistMsg" style="display:none; text-align:center; padding:60px 0;">
+        <p style="font-size:1.2rem; color:#666; margin-bottom:20px;">Your wishlist is currently empty.</p>
+        <a href="shop.html" class="continue-shopping-btn">Continue Shopping</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">樱木</a></div>
+      <br>
+      <p class="footer-copy1">
+        Contact us | 012-345 6789 | yingmuclothing@gmail.com
+      </p>
+      <br>
+      <p class="footer-copy2">FAQs<br>Terms & Conditions<br>Explore More</p>
+      <br><br>
+      <p class="footer-copy3">&copy; 2025 樱木. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script>
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Cart count update
+    function updateCartCount() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((total, item) => total + item.quantity, 0);
+      document.querySelectorAll('.cart-count').forEach(el => el.textContent = count);
+    }
+    updateCartCount();
+
+    // Wishlist rendering
+    function renderWishlist() {
+      const grid = document.getElementById('wishlistGrid');
+      const emptyMsg = document.getElementById('emptyWishlistMsg');
+      let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      grid.innerHTML = '';
+      if (wishlist.length === 0) {
+        emptyMsg.style.display = 'block';
+        return;
+      }
+      emptyMsg.style.display = 'none';
+      wishlist.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'product-card wishlist-card';
+        itemDiv.innerHTML = `
+          <div class="product-image"><img src="${item.image}" alt="${item.name}"></div>
+          <div class="product-info">
+            <h3>${item.name}</h3>
+            <p class="price">RM${item.price.toFixed(2)}</p>
+            <button class="remove-wishlist-btn" title="Remove from wishlist"><i class="fa fa-heart"></i></button>
+          </div>
+        `;
+        itemDiv.querySelector('.remove-wishlist-btn').addEventListener('click', () => {
+          wishlist = wishlist.filter(wi => String(wi.id) !== String(item.id));
+          localStorage.setItem('wishlist', JSON.stringify(wishlist));
+          renderWishlist();
+        });
+        grid.appendChild(itemDiv);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', renderWishlist);
+
+    // Mobile menu toggle (reuse from other pages)
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('mainNav');
+    const menuOverlay = document.getElementById('menuOverlay');
+    if(menuToggle && navLinks && menuOverlay) {
+      menuToggle.addEventListener('click', function () {
+        navLinks.classList.toggle('open');
+        menuOverlay.classList.toggle('active');
+      });
+      menuOverlay.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        menuOverlay.classList.remove('active');
+      });
+    }
+    // Mobile dropdown menu toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileDropdown = document.getElementById('mobileDropdown');
+    const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+    if (mobileMenuToggle && mobileDropdown) {
+      mobileMenuToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileDropdown.classList.toggle('show');
+      });
+      document.addEventListener('click', function (e) {
+        if (!mobileMenuToggle.contains(e.target) && !mobileDropdown.contains(e.target)) {
+          mobileDropdown.classList.remove('show');
+        }
+      });
+    }
+    if (mobileCloseBtn) {
+      mobileCloseBtn.addEventListener('click', function () {
+        mobileDropdown.classList.remove('show');
+      });
+    }
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    if(backToTop) {
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+    // Clear input utility
+    function clearInput() {
+      const input = document.querySelector('.search-form input[type="search"]');
+      if(input) input.value = "";
+    }
+  </script>
+  <style>
+    .wishlist-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 40px;
+    }
+    .wishlist-title {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #333;
+    }
+    .wishlist-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    .wishlist-card {
+      box-shadow: 0 2px 12px rgba(12,35,64,0.07);
+      border-radius: 14px;
+      background: #fff;
+      padding: 18px 18px 12px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.2s;
+      position: relative;
+    }
+    .wishlist-card .product-image img {
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .wishlist-card .product-info {
+      width: 100%;
+      text-align: center;
+    }
+    .wishlist-card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #222;
+    }
+    .wishlist-card .price {
+      font-size: 1rem;
+      color: #0c2340;
+      margin-bottom: 12px;
+    }
+    .remove-wishlist-btn {
+      background: none;
+      border: none;
+      color: #d60017;
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: color 0.2s;
+    }
+    .remove-wishlist-btn:hover {
+      color: #a80012;
+    }
+    @media (max-width: 768px) {
+      .wishlist-container {
+        padding: 0 10px;
+      }
+      .wishlist-items-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+    }
+  </style>
+</body>
+</html> 

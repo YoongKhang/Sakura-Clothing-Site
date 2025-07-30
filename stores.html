@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STORES | 樱木</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="storescss.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html" style="text-decoration: none; color: inherit;">樱木</a>
+    </div>
+    <button class="menu-icon" id="menuToggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+    <nav class="nav-links" id="mainNav">
+      <a href="shop.html">SHOP</a>
+      <a href="stores.html">STORES</a>
+      <a href="about.html">ABOUT</a>
+      <a href="account.html">ACCOUNT</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <div class="nav-icons">
+      <form class="search-form" action="">
+        <input type="search" autofocus required placeholder="Search...">
+        <i class="fa fa-search"></i>
+        <button type="button" onclick="clearInput()">Clear</button>
+      </form>
+      <a href="wishlist.html" class="wishlist-icon" title="Wishlist"><i class="fa fa-heart"></i></a>
+      <a href="cart.html" class="cart-icon">&#128722;<span class="cart-count">0</span></a>
+    </div>
+    <div class="icon-grid">
+      <form class="search-form mobile-search-form" action="">
+        <input type="search" autofocus required placeholder="Search...">
+        <i class="fa fa-search"></i>
+        <button type="button" onclick="clearInput()">Clear</button>
+      </form>
+      <a href="wishlist.html" class="wishlist-icon mobile-wishlist-icon" title="Wishlist"><i class="fa fa-heart"></i></a>
+      <a href="cart.html" class="cart-icon">&#128722;<span class="cart-count">0</span></a>
+      <div class="mobile-menu-icon" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="mobile-dropdown" id="mobileDropdown">
+        <div class="mobile-dropdown-header">
+          <button class="mobile-close-btn" id="mobileCloseBtn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <ul class="mobile-menu-list">
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="stores.html">Stores</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu-overlay" id="menuOverlay"></div>
+  <main>
+    <section class="hero" style="margin-top:80px;height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-image:url('images/storesbg.jpg');background-size:cover;background-position:center;">
+      <div class="page-title">Our Stores</div>
+      <p class="contact-desc" style="color:#fff;text-align:center;font-size:20px;margin-top:18px;text-shadow:0 2px 8px #0c2340;line-height:1.3;letter-spacing:0.5px;max-width:600px;margin-left:auto;margin-right:auto;">Find 樱木 at select locations.</p>
+    </section>
+    <section>
+      <section class="list" style="padding-top: 40px; padding-bottom: 40px;">
+        <h2>Japan</h2>
+        <div id="japan">
+          <div id="tokyo">
+            <h3 style="color: black; font-size:2.2em;">東京</h3>
+            <hr style="width: 100%; border: 0; border-top: 2px solid #222; margin: 12px 0 24px 0;">
+            <div class="store-listings-grid">
+              <div class="store-listing"><h4>417 by Edifice</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神南1-15-5" target="_blank">東京都渋谷区神南1-15-5</a></div><div class="tel">03-5456-6971</div></div>
+              <div class="store-listing"><h4>Edifice</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前6-23-3" target="_blank">東京都渋谷区神宮前6-23-3</a></div><div class="tel">03-3400-2931</div></div>
+              <div class="store-listing"><h4>American Rag Cie</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前6-15-2" target="_blank">東京都渋谷区神宮前6-15-2</a></div><div class="tel">050-3138-2222</div></div>
+              <div class="store-listing"><h4>And Pheb</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都杉並区高円寺南 4-8-7" target="_blank">東京都杉並区高円寺南 4-8-7</a></div><div class="tel">03-5929-9757</div></div>
+              <div class="store-listing"><h4>B'2nd</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都台東区上野 6-10-17" target="_blank">東京都台東区上野 6-10-17</a></div><div class="tel">03-3834-4748</div></div>
+              <div class="store-listing"><h4>Barneys New York</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都中央区銀座 6-8-7" target="_blank">東京都中央区銀座 6-8-7</a></div><div class="tel">0120-137-007</div></div>
+              <div class="store-listing"><h4>Beams</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前3-24-7" target="_blank">東京都渋谷区神宮前3-24-7</a></div><div class="tel">03-3470-3947</div></div>
+              <div class="store-listing"><h4>Beams Boy</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前3-24-5" target="_blank">東京都渋谷区神宮前3-24-5</a></div><div class="tel">03-5770-5550</div></div>
+              <div class="store-listing"><h4>Beaver</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区宇田川町3-10" target="_blank">東京都渋谷区宇田川町3-10</a></div><div class="tel">03-5728-2288</div></div>
+              <div class="store-listing"><h4>Cassidy</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前6-6-4" target="_blank">東京都渋谷区神宮前6-6-4</a></div><div class="tel">03-3406-3070</div></div>
+              <div class="store-listing"><h4>Charcoal</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都港区南麻布 4-2-48" target="_blank">東京都港区南麻布 4-2-48</a></div><div class="tel">03-6432-5265</div></div>
+              <div class="store-listing"><h4>Ciao Panic</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都豊島区西池袋1-11-1 ルミネ池袋5F" target="_blank">東京都豊島区西池袋1-11-1 ルミネ池袋5F</a></div><div class="tel">03-5954-8179</div></div>
+              <div class="store-listing"><h4>coverchord nakameguro</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都目黒区青葉台1-23-14 1F" target="_blank">東京都目黒区青葉台1-23-14 1F</a></div><div class="tel">03-6452-3072</div></div>
+              <div class="store-listing"><h4>Estnation</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都港区六本木6-10-2 六本木ヒルズ ヒルサイド けやき坂コンプレックス1F・2F" target="_blank">東京都港区六本木6-10-2 六本木ヒルズ ヒルサイド けやき坂コンプレックス1F・2F</a></div><div class="tel">0120-503-971</div></div>
+              <div class="store-listing"><h4>Forget me nots</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区猿楽町２０−１３ 佐久間ビル 1F" target="_blank">東京都渋谷区猿楽町２０−１３ 佐久間ビル 1F</a></div><div class="tel">03-6433-7933</div></div>
+              <div class="store-listing"><h4>Freaks Store</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神南1-13-1" target="_blank">東京都渋谷区神南1-13-1</a></div><div class="tel">03-6415-7728</div></div>
+              <div class="store-listing"><h4>Hummingbirds' hill Shop</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前3-27-22　ル コタージュビルディング 101" target="_blank">東京都渋谷区神宮前3-27-22　ル コタージュビルディング 101</a></div><div class="tel">03-6721-0189</div></div>
+              <div class="store-listing"><h4>Hype Golf</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都港区南青山 2-2-3" target="_blank">東京都港区南青山 2-2-3</a></div><div class="tel">03-6890-8888</div></div>
+              <div class="store-listing"><h4>Isetan</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都新宿区新宿3-14-1" target="_blank">東京都新宿区新宿3-14-1</a></div><div class="tel">03-3352-1111</div></div>
+              <div class="store-listing"><h4>Journal Standard</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神南 1-5-6" target="_blank">東京都渋谷区神南 1-5-6</a></div><div class="tel">022-212-5810</div></div>
+              <div class="store-listing"><h4>Keboz</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都台東区蔵前２丁目４−3" target="_blank">東京都台東区蔵前２丁目４−3</a></div><div class="tel"></div></div>
+              <div class="store-listing"><h4>LHP</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前４丁目３２−12" target="_blank">東京都渋谷区神宮前４丁目３２−12</a></div><div class="tel">03-5474-0808</div></div>
+              <div class="store-listing"><h4>Links</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都目黒区五本木2-42-5" target="_blank">東京都目黒区五本木2-42-5</a></div><div class="tel">03-3791-7160</div></div>
+              <div class="store-listing"><h4>Loveless</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都港区南青山 3-16-1" target="_blank">東京都港区南青山 3-16-1</a></div><div class="tel">03-3401-2301</div></div>
+              <div class="store-listing"><h4>Miroku</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都港区白金台5-4-3-103" target="_blank">東京都港区白金台5-4-3-103</a></div><div class="tel">070-9219-6258</div></div>
+              <div class="store-listing"><h4>Nano Universe</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神南1-19-14" target="_blank">東京都渋谷区神南1-19-14</a></div><div class="tel">03-5456-8172</div></div>
+              <div class="store-listing"><h4>NEPENTHES TOKYO</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前5-44-1" target="_blank">東京都渋谷区神宮前5-44-1</a></div><div class="tel">03-3400-7227</div></div>
+              <div class="store-listing"><h4>NEPENTHES WOMAN TOKYO</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前5-45-2-1F" target="_blank">東京都渋谷区神宮前5-45-2-1F</a></div><div class="tel">03-5962-7721</div></div>
+              <div class="store-listing"><h4>Nubian</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前1-20-2" target="_blank">東京都渋谷区神宮前1-20-2</a></div><div class="tel">03-6447-0207</div></div>
+              <div class="store-listing"><h4>O</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区猿楽町２６−１３ グレイス代官山 ２０２" target="_blank">東京都渋谷区猿楽町２６−１３ グレイス代官山 ２０２</a></div><div class="tel">03-6416-1187</div></div>
+              <div class="store-listing"><h4>Override</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前 6-29-3" target="_blank">東京都渋谷区神宮前 6-29-3</a></div><div class="tel">03-5467-0047</div></div>
+              <div class="store-listing"><h4>Poefu</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都杉並区西荻北3-2-3" target="_blank">東京都杉並区西荻北3-2-3</a></div><div class="tel">03-6913-9212</div></div>
+              <div class="store-listing"><h4>Rose Bud</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都新宿区新宿3-38-1 ルミネエスト新宿1F" target="_blank">東京都新宿区新宿3-38-1 ルミネエスト新宿1F</a></div><div class="tel">03-5368-2767</div></div>
+              <div class="store-listing"><h4>Ships</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都中央区銀座3-4-15" target="_blank">東京都中央区銀座3-4-15</a></div><div class="tel">03-3564-5547</div></div>
+              <div class="store-listing"><h4>Studious</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前4-26-32" target="_blank">東京都渋谷区神宮前4-26-32</a></div><div class="tel">03-5785-1864</div></div>
+              <div class="store-listing"><h4>Sun House</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都台東区上野6-9-5" target="_blank">東京都台東区上野6-9-5</a></div><div class="tel">03-3831-3801</div></div>
+              <div class="store-listing"><h4>Styles</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区猿楽町 11-3" target="_blank">東京都渋谷区猿楽町 11-3</a></div><div class="tel">03-6415-7722</div></div>
+              <div class="store-listing"><h4>Tamaniwa</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区東3-26-3" target="_blank">東京都渋谷区東3-26-3</a></div><div class="tel">03-6427-5351</div></div>
+              <div class="store-listing"><h4>Union Tokyo</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前2-26-5" target="_blank">東京都渋谷区神宮前2-26-5</a></div><div class="tel">03-6434-5510</div></div>
+              <div class="store-listing"><h4>United Arrows</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前3-28-1" target="_blank">東京都渋谷区神宮前3-28-1</a></div><div class="tel">03-3479-8180</div></div>
+              <div class="store-listing"><h4>United Arrows H Beauty &amp; Youth</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都港区南青山3-14-17" target="_blank">東京都港区南青山3-14-17</a></div><div class="tel">03-6438-5230</div></div>
+              <div class="store-listing"><h4>United Arrows Green Label Relaxing</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都世田谷区奥沢5-25-13" target="_blank">東京都世田谷区奥沢5-25-13</a></div><div class="tel">03-5731-8531</div></div>
+              <div class="store-listing"><h4>Urban Research</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区神宮前4-12-10 表参道ヒルズB3F" target="_blank">東京都渋谷区神宮前4-12-10 表参道ヒルズB3F</a></div><div class="tel">03-6721-1683</div></div>
+              <div class="store-listing"><h4>Velvet</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都世田谷区北沢3-26-3" target="_blank">東京都世田谷区北沢3-26-3</a></div><div class="tel">03-6407-8770</div></div>
+              <div class="store-listing"><h4>Wild Life Tailor</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都渋谷区西恵比寿1-32-12" target="_blank">東京都渋谷区西恵比寿1-32-12</a></div><div class="tel">03-5728-6320</div></div>
+              <div class="store-listing"><h4>Wism</h4><div class="address"><a href="https://www.google.com/maps/search/?api=1&query=東京都新宿区新宿４丁目１−7 2F" target="_blank">東京都新宿区新宿４丁目１−7 2F</a></div><div class="tel">03-5361-7760</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Add Overseas section and other regions as needed, using the user's provided data -->
+      <div></div>
+      <div class="pagetop"><a href=""></a></div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">樱木</a></div>
+      <br>
+      <p class="footer-copy1">
+        Contact us | 012-345 6789 | yingmuclothing@gmail.com
+      </p>
+      <br>
+      <p class="footer-copy2">FAQs<br>Terms & Conditions<br>Explore More</p>
+      <br><br>
+      <p class="footer-copy3">&copy; 2025 樱木. All rights reserved.</p>
+    </div>
+  </footer>
+  <div class="back-to-top" id="backToTop" style="display:flex;align-items:center;justify-content:center;"><i class="fas fa-arrow-up"></i></div>
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      // Back to top button visibility
+      const backToTopBtn = document.getElementById('backToTop');
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+    // Back to top button click
+    const backToTopBtn = document.getElementById('backToTop');
+    backToTopBtn.addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Desktop menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('mainNav');
+    const menuOverlay = document.getElementById('menuOverlay');
+    if(menuToggle && navLinks && menuOverlay) {
+      menuToggle.addEventListener('click', function () {
+        navLinks.classList.toggle('open');
+        menuOverlay.classList.toggle('active');
+      });
+      menuOverlay.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        menuOverlay.classList.remove('active');
+      });
+    }
+
+    // Mobile dropdown menu toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileDropdown = document.getElementById('mobileDropdown');
+    const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+    if (mobileMenuToggle && mobileDropdown) {
+      mobileMenuToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileDropdown.classList.toggle('show');
+      });
+      document.addEventListener('click', function (e) {
+        if (!mobileMenuToggle.contains(e.target) && !mobileDropdown.contains(e.target)) {
+          mobileDropdown.classList.remove('show');
+        }
+      });
+    }
+    if (mobileCloseBtn) {
+      mobileCloseBtn.addEventListener('click', function () {
+        mobileDropdown.classList.remove('show');
+      });
+    }
+
+    // Clear input utility
+    function clearInput() {
+      const input = document.querySelector('.search-form input[type="search"]');
+      if(input) input.value = "";
+    }
+  </script>
+</body>
+</html> 

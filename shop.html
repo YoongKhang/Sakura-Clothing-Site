@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | 樱木</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="shopstyle.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .contact-desc {
+      color: #fff;
+      text-align: center;
+      font-size: 20px;
+      margin-top: 18px;
+      text-shadow: 0 2px 8px #0c2340;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html" style="text-decoration: none; color: inherit;">樱木</a>
+    </div>
+    <button class="menu-icon" id="menuToggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+    <nav class="nav-links" id="mainNav">
+      <a href="shop.html">SHOP</a>
+      <a href="stores.html">STORES</a>
+      <a href="about.html">ABOUT</a>
+      <a href="account.html">ACCOUNT</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <div class="nav-icons">
+      <form class="search-form" action="">
+        <input type="search" autofocus required placeholder="Search...">
+        <i class="fa fa-search"></i>
+        <button type="button" onclick="clearInput()">Clear</button>
+      </form>
+      <a href="wishlist.html" class="wishlist-icon" title="Wishlist"><i class="fa fa-heart"></i></a>
+      <a href="cart.html" class="cart-icon">&#128722;<span class="cart-count">0</span></a>
+    </div>
+    <div class="icon-grid">
+      <form class="search-form mobile-search-form" action="">
+        <input type="search" autofocus required placeholder="Search...">
+        <i class="fa fa-search"></i>
+        <button type="button" onclick="clearInput()">Clear</button>
+      </form>
+      <a href="wishlist.html" class="wishlist-icon mobile-wishlist-icon" title="Wishlist"><i class="fa fa-heart"></i></a>
+      <a href="cart.html" class="cart-icon">&#128722;<span class="cart-count">0</span></a>
+      <div class="mobile-menu-icon" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="mobile-dropdown" id="mobileDropdown">
+        <div class="mobile-dropdown-header">
+          <button class="mobile-close-btn" id="mobileCloseBtn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <ul class="mobile-menu-list">
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="stores.html">Stores</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu-overlay" id="menuOverlay"></div>
+
+  <section class="hero" style="height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-image:url('images/backgroundshop.png');background-size:cover;background-position:center;">
+    <div class="page-title">Shop 樱木</div>
+    <p class="contact-desc">Discover our exclusive summer selection, featuring essential pieces with our signature style.</p>
+  </section>
+
+  <div class="collection-info">
+    <span>58 Items</span>
+    <button class="filter-btn" id="openFilterSort" type="button">Filter & Sort</button>
+  </div>
+  <section id="filterSortSection" class="filter-sort-section" style="max-height:0;opacity:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(.4,0,.2,1),opacity 0.3s;">
+    <form id="filterSortForm">
+      <div class="filter-group">
+        <label>Size:</label>
+        <div class="filter-sizes">
+          <div class="checkbox-wrapper-3"><input type="checkbox" id="size-xs" name="size" value="XS"><label for="size-xs" class="toggle"><span></span></label><span class="size-label">XS</span></div>
+          <div class="checkbox-wrapper-3"><input type="checkbox" id="size-s" name="size" value="S"><label for="size-s" class="toggle"><span></span></label><span class="size-label">S</span></div>
+          <div class="checkbox-wrapper-3"><input type="checkbox" id="size-m" name="size" value="M"><label for="size-m" class="toggle"><span></span></label><span class="size-label">M</span></div>
+          <div class="checkbox-wrapper-3"><input type="checkbox" id="size-l" name="size" value="L"><label for="size-l" class="toggle"><span></span></label><span class="size-label">L</span></div>
+          <div class="checkbox-wrapper-3"><input type="checkbox" id="size-xl" name="size" value="XL"><label for="size-xl" class="toggle"><span></span></label><span class="size-label">XL</span></div>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>Color:</label>
+        <div class="filter-colors">
+          <div class="checkbox-wrapper-3"><input type="checkbox" id="color-white" name="color" value="White"><label for="color-white" class="toggle"><span style="background:#f5f5f5;"></span></label></div>
+          <div class="checkbox-wrapper-3"><input type="checkbox" id="color-black" name="color" value="Black"><label for="color-black" class="toggle"><span style="background:#222;"></span></label></div>
+          <div class="checkbox-wrapper-3"><input type="checkbox" id="color-grey" name="color" value="Grey"><label for="color-grey" class="toggle"><span style="background:#b0b0b0;"></span></label></div>
+          <div class="checkbox-wrapper-3"><input type="checkbox" id="color-navy" name="color" value="Navy"><label for="color-navy" class="toggle"><span style="background:#222b3a;"></span></label></div>
+          <div class="checkbox-wrapper-3"><input type="checkbox" id="color-blue" name="color" value="Blue"><label for="color-blue" class="toggle"><span style="background:#3a6ea5;"></span></label></div>
+          <div class="checkbox-wrapper-3"><input type="checkbox" id="color-camel" name="color" value="Camel"><label for="color-camel" class="toggle"><span style="background:#c2b280;"></span></label></div>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>Sort by:</label>
+        <select name="sort">
+          <option value="">Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A-Z</option>
+          <option value="name-desc">Name: Z-A</option>
+        </select>
+      </div>
+      <div class="filter-sort-actions">
+        <button type="button" id="applyFilterSort" class="apply-btn">Apply</button>
+        <button type="button" id="resetFilterSort" class="reset-btn">Reset</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="products-section">
+    <div class="products-grid">
+      <!-- Product 1 -->
+      <div class="product-card" data-id="1" data-name="Summer Sleeveless Top" data-description="A breezy, lightweight top perfect for summer days. Soft, breathable cotton in a relaxed fit." data-color="#f5f5f5" data-colorname="White" data-coloroptions='[{"name":"White","hex":"#f5f5f5","image":"images/shirt1.jpg"},{"name":"Black","hex":"#222","image":"images/shirt2.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Audrey","text":"So comfy and stylish!"},{"user":"Bryan","text":"Perfect for hot weather."}]'>
+        <div class="product-image"><img src="images/shirt1.jpg" alt="Summer Sleeveless Top"></div>
+        <div class="product-info">
+          <h3>Summer Sleeveless Top</h3>
+          <p class="price">RM29.90</p>
+          <button class="add-to-cart" data-id="1" data-name="Summer Sleeveless Top" data-price="29.90" data-image="images/shirt1.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 2 -->
+      <div class="product-card" data-id="2" data-name="Crew Neck T-Shirt" data-description="Classic crew neck tee in premium cotton. Versatile and timeless for any wardrobe." data-color="#222" data-colorname="Black" data-coloroptions='[{"name":"Black","hex":"#222","image":"images/shirt2.jpg"},{"name":"White","hex":"#f5f5f5","image":"images/shirt1.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Jaedyn","text":"Great fit and quality."}]'>
+        <div class="product-image"><img src="images/shirt2.jpg" alt="Crew Neck T-Shirt"></div>
+        <div class="product-info">
+          <h3>Crew Neck T-Shirt</h3>
+          <p class="price">RM69.90</p>
+          <button class="add-to-cart" data-id="2" data-name="Crew Neck T-Shirt" data-price="69.90"
+            data-image="images/shirt2.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 3 -->
+      <div class="product-card" data-id="3" data-name="Double Gauze Blouse" data-description="Lightweight double gauze blouse for effortless layering. Soft, airy, and elegant." data-color="#eaeaea" data-colorname="Light Grey" data-coloroptions='[{"name":"Light Grey","hex":"#eaeaea","image":"images/shirt3.jpg"},{"name":"Navy","hex":"#222b3a","image":"images/shirt4.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Mingze","text":"Love the fabric!"}]'>
+        <div class="product-image"><img src="images/shirt3.jpg" alt="Double Gauze Blouse"></div>
+        <div class="product-info">
+          <h3>Double Gauze Blouse</h3>
+          <p class="price">RM99.90</p>
+          <button class="add-to-cart" data-id="3" data-name="Double Gauze Blouse" data-price="99.90"
+            data-image="images/shirt3.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 4 -->
+      <div class="product-card" data-id="4" data-name="Textured Jersey T-shirt" data-description="Textured jersey for a modern twist on a classic tee. Subtle pattern, soft feel." data-color="#222b3a" data-colorname="Navy" data-coloroptions='[{"name":"Navy","hex":"#222b3a","image":"images/shirt4.jpg"},{"name":"Grey","hex":"#b0b0b0","image":"images/shirt5.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Yoong Khang","text":"Unique texture, very comfortable."}]'>
+        <div class="product-image"><img src="images/shirt4.jpg" alt="Textured Jersey T-shirt"></div>
+        <div class="product-info">
+          <h3>Textured Jersey T-shirt</h3>
+          <p class="price">RM69.90</p>
+          <button class="add-to-cart" data-id="4" data-name="Textured Jersey T-shirt" data-price="69.90"
+            data-image="images/shirt4.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 5 -->
+      <div class="product-card" data-id="5" data-name="Cotton Short Sleeve T-shirt" data-description="Everyday short sleeve tee in soft cotton. Easy to style and layer." data-color="#b0b0b0" data-colorname="Grey" data-coloroptions='[{"name":"Grey","hex":"#b0b0b0","image":"images/shirt5.jpg"},{"name":"Navy","hex":"#222b3a","image":"images/shirt4.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Audrey","text":"Perfect for daily wear."}]'>
+        <div class="product-image"><img src="images/shirt5.jpg" alt="Cotton Short Sleeve T-shirt"></div>
+        <div class="product-info">
+          <h3>Cotton Short Sleeve T-shirt</h3>
+          <p class="price">RM39.90</p>
+          <button class="add-to-cart" data-id="5" data-name="Cotton Short Sleeve T-shirt" data-price="39.90"
+            data-image="images/shirt5.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 6 -->
+      <div class="product-card" data-id="6" data-name="Cotton Long Sleeve T-shirt" data-description="Classic long sleeve tee in soft, breathable cotton. Perfect for layering or solo wear." data-color="#f5f5f5" data-colorname="White" data-coloroptions='[{"name":"White","hex":"#f5f5f5","image":"images/shirt6.jpg"},{"name":"Black","hex":"#222","image":"images/shirt2.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Bryan","text":"Great for cool evenings."}]'>
+        <div class="product-image"><img src="images/shirt6.jpg" alt="Cotton Long Sleeve T-shirt"></div>
+        <div class="product-info">
+          <h3>Cotton Long Sleeve T-shirt</h3>
+          <p class="price">RM49.90</p>
+          <button class="add-to-cart" data-id="6" data-name="Cotton Long Sleeve T-shirt" data-price="49.90" data-image="images/shirt6.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 7 -->
+      <div class="product-card" data-id="7" data-name="Oversized Asymmetric Sweater" data-description="Statement oversized sweater with an asymmetric cut. Bold, modern, and cozy." data-color="#b0b0b0" data-colorname="Grey" data-coloroptions='[{"name":"Grey","hex":"#b0b0b0","image":"images/shirt7.jpg"},{"name":"Navy","hex":"#222b3a","image":"images/shirt4.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Audrey","text":"Super warm and stylish!"}]'>
+        <div class="product-image"><img src="images/shirt7.jpg" alt="Oversized Asymmetric Sweater"></div>
+        <div class="product-info">
+          <h3>Oversized Asymmetric Sweater</h3>
+          <p class="price">RM599.90</p>
+          <button class="add-to-cart" data-id="7" data-name="Oversized Asymmetric Sweater" data-price="599.90" data-image="images/shirt7.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 8 -->
+      <div class="product-card" data-id="8" data-name="Cropped Peacoat" data-description="Cropped peacoat with a modern silhouette. Tailored, chic, and versatile." data-color="#222b3a" data-colorname="Navy" data-coloroptions='[{"name":"Navy","hex":"#222b3a","image":"images/shirt8.jpg"},{"name":"Camel","hex":"#c2b280","image":"images/shirt9.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Jaedyn","text":"Love the cropped look!"}]'>
+        <div class="product-image"><img src="images/shirt8.jpg" alt="Cropped Peacoat"></div>
+        <div class="product-info">
+          <h3>Cropped Peacoat</h3>
+          <p class="price">RM299.90</p>
+          <button class="add-to-cart" data-id="8" data-name="Cropped Peacoat" data-price="299.90" data-image="images/shirt8.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 9 -->
+      <div class="product-card" data-id="9" data-name="Tied Collar Sweater" data-description="Elegant sweater with a tied collar detail. Soft, refined, and unique." data-color="#c2b280" data-colorname="Camel" data-coloroptions='[{"name":"Camel","hex":"#c2b280","image":"images/shirt9.jpg"},{"name":"Navy","hex":"#222b3a","image":"images/shirt8.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Mingze","text":"The collar is so cute!"}]'>
+        <div class="product-image"><img src="images/shirt9.jpg" alt="Tied Collar Sweater"></div>
+        <div class="product-info">
+          <h3>Tied Collar Sweater</h3>
+          <p class="price">RM399.90</p>
+          <button class="add-to-cart" data-id="9" data-name="Tied Collar Sweater" data-price="399.90" data-image="images/shirt9.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 10 -->
+      <div class="product-card" data-id="10" data-name="Cotton bowling shirt" data-description="Retro-inspired bowling shirt in crisp cotton. Relaxed fit, bold style." data-color="#f5f5f5" data-colorname="White" data-coloroptions='[{"name":"White","hex":"#f5f5f5","image":"images/shirt10.jpg"},{"name":"Blue","hex":"#3a6ea5","image":"images/shirt11.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Yoong Khang","text":"Fun and comfortable."}]'>
+        <div class="product-image"><img src="images/shirt10.jpg" alt="Cotton bowling shirt"></div>
+        <div class="product-info">
+          <h3>Cotton bowling shirt</h3>
+          <p class="price">RM59.90</p>
+          <button class="add-to-cart" data-id="10" data-name="Cotton bowling shirt" data-price="59.90" data-image="images/shirt10.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 11 -->
+      <div class="product-card" data-id="11" data-name="Piqué polo shirt" data-description="Classic piqué polo with a modern fit. Breathable, stylish, and versatile." data-color="#3a6ea5" data-colorname="Blue" data-coloroptions='[{"name":"Blue","hex":"#3a6ea5","image":"images/shirt11.jpg"},{"name":"White","hex":"#f5f5f5","image":"images/shirt10.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Audrey","text":"Great for weekends!"}]'>
+        <div class="product-image"><img src="images/shirt11.jpg" alt="Piqué polo shirt"></div>
+        <div class="product-info">
+          <h3>Piqué polo shirt</h3>
+          <p class="price">RM79.90</p>
+          <button class="add-to-cart" data-id="11" data-name="Piqué polo shirt" data-price="79.90" data-image="images/shirt11.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 12 -->
+      <div class="product-card" data-id="12" data-name="Cotton T-shirt" data-description="Essential cotton tee for everyday comfort. Soft, durable, and easy to style." data-color="#f5f5f5" data-colorname="White" data-coloroptions='[{"name":"White","hex":"#f5f5f5","image":"images/shirt12.jpg"},{"name":"Black","hex":"#222","image":"images/shirt2.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Bryan","text":"A staple in my closet."}]'>
+        <div class="product-image"><img src="images/shirt12.jpg" alt="Cotton T-shirt"></div>
+        <div class="product-info">
+          <h3>Cotton T-shirt</h3>
+          <p class="price">RM49.90</p>
+          <button class="add-to-cart" data-id="12" data-name="Cotton T-shirt" data-price="49.90" data-image="images/shirt12.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 13 -->
+      <div class="product-card" data-id="13" data-name="Basic zip-up hoodie" data-description="Minimalist zip-up hoodie in soft fleece. Clean lines, maximum comfort." data-color="#b0b0b0" data-colorname="Grey" data-coloroptions='[{"name":"Grey","hex":"#b0b0b0","image":"images/shirt13.jpg"},{"name":"Black","hex":"#222","image":"images/shirt2.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Mingze","text":"So cozy!"}]'>
+        <div class="product-image"><img src="images/shirt13.jpg" alt="Basic zip-up hoodie"></div>
+        <div class="product-info">
+          <h3>Basic zip-up hoodie</h3>
+          <p class="price">RM129.90</p>
+          <button class="add-to-cart" data-id="13" data-name="Basic zip-up hoodie" data-price="129.90" data-image="images/shirt13.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 14 -->
+      <div class="product-card" data-id="14" data-name="Boxy fit hoodie" data-description="Boxy fit hoodie with dropped shoulders. Modern, relaxed, and ultra-soft." data-color="#222" data-colorname="Black" data-coloroptions='[{"name":"Black","hex":"#222","image":"images/shirt14.jpg"},{"name":"Grey","hex":"#b0b0b0","image":"images/shirt13.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Jaedyn","text":"Love the fit!"}]'>
+        <div class="product-image"><img src="images/shirt14.jpg" alt="Boxy fit hoodie"></div>
+        <div class="product-info">
+          <h3>Boxy fit hoodie</h3>
+          <p class="price">RM129.90</p>
+          <button class="add-to-cart" data-id="14" data-name="Boxy fit hoodie" data-price="129.90" data-image="images/shirt14.jpg">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product 15 -->
+      <div class="product-card" data-id="15" data-name="Short sleeve boxy fit sweatshirt" data-description="Short sleeve sweatshirt with a boxy fit. Sporty, modern, and comfortable." data-color="#f5f5f5" data-colorname="White" data-coloroptions='[{"name":"White","hex":"#f5f5f5","image":"images/shirt15.jpg"},{"name":"Black","hex":"#222","image":"images/shirt2.jpg"}]' data-sizes="XS,S,M,L,XL" data-reviews='[{"user":"Audrey","text":"Perfect for summer!"}]'>
+        <div class="product-image"><img src="images/shirt15.jpg" alt="Short sleeve boxy fit sweatshirt"></div>
+        <div class="product-info">
+          <h3>Short sleeve boxy fit sweatshirt</h3>
+          <p class="price">RM99.90</p>
+          <button class="add-to-cart" data-id="15" data-name="Short sleeve boxy fit sweatshirt" data-price="99.90" data-image="images/shirt15.jpg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="see-more-container">
+      <button class="see-more-btn">See More</button>
+    </div>
+  </section>
+
+  <!-- Product Detail Modal (hidden by default) -->
+  <div id="productModal" class="product-modal-overlay" style="display:none;">
+    <div class="product-modal">
+      <span class="modal-close-x" id="modalCloseX">×</span>
+      <button class="modal-wishlist-btn" id="modalWishlistBtn" title="Add to Wishlist"><i class="fa fa-heart-o"></i></button>
+      <div class="modal-image-gallery">
+        <img id="modalImg" src="" alt="Product Image">
+      </div>
+      <div class="modal-info">
+        <h2 id="modalName"></h2>
+        <div class="modal-color-row">
+          <span id="modalColorSwatch" class="color-swatch"></span>
+          <span id="modalColorName" class="color-name"></span>
+        </div>
+        <div class="modal-sizes-row">
+          <span>Size:</span>
+          <div id="modalSizeButtons" class="size-buttons"></div>
+          <span id="modalSizeNote" class="size-note"></span>
+        </div>
+        <div class="modal-qty-row">
+          <button id="qtyMinus" class="qty-btn" aria-label="Decrease quantity">-</button>
+          <span id="modalQty">1</span>
+          <button id="qtyPlus" class="qty-btn" aria-label="Increase quantity">+</button>
+          <span id="modalStock" class="stock-status"></span>
+        </div>
+        <div class="modal-price-row">
+          <span id="modalPrice" class="modal-price"></span>
+          <span class="modal-store-status">Limited Store</span>
+        </div>
+        <a href="#" id="modalCheckSize" class="modal-link">Check my size</a>
+        <div class="modal-reviews-row">
+          <span id="modalStars" class="modal-stars"></span>
+          <span id="modalReviewCount" class="modal-review-count"></span>
+        </div>
+        <button id="modalAddToCart" class="add-to-cart fullwidth">ADD TO CART</button>
+        <a href="#" id="modalFindStock" class="modal-link">Find stock in store</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">樱木</a></div>
+      <br>
+      <p class="footer-copy1">
+        Contact us | 012-345 6789 | yingmuclothing@gmail.com
+      </p>
+      <br>
+      <p class="footer-copy2">FAQs<br>Terms & Conditions<br>Explore More</p>
+      <br><br>
+      <p class="footer-copy3">&copy; 2025 樱木. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+  <script>
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      updateCartCount();
+
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+          const id = button.getAttribute('data-id');
+          const name = button.getAttribute('data-name');
+          const price = parseFloat(button.getAttribute('data-price'));
+          const image = button.getAttribute('data-image');
+          
+          const existingItem = cart.find(item => item.id === id);
+          if (existingItem) {
+            existingItem.quantity++;
+          } else {
+            cart.push({
+              id,
+              name,
+              price,
+              image,
+              quantity: 1
+            });
+          }
+          
+          localStorage.setItem('cart', JSON.stringify(cart));
+          updateCartCount();
+          
+          const notification = document.createElement('div');
+          notification.className = 'cart-notification';
+          notification.textContent = `${name} added to cart`;
+          document.body.appendChild(notification);
+          
+          setTimeout(() => notification.classList.add('show'), 10);
+          setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => document.body.removeChild(notification), 300);
+          }, 2000);
+        });
+      });
+
+      function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const count = cart.reduce((total, item) => total + item.quantity, 0);
+        document.querySelectorAll('.cart-count').forEach(el => el.textContent = count);
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTopBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      });
+      backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('mainNav');
+    const menuOverlay = document.getElementById('menuOverlay');
+    menuToggle.addEventListener('click', function () {
+      navLinks.classList.toggle('open');
+      menuOverlay.classList.toggle('active');
+    });
+    menuOverlay.addEventListener('click', function () {
+      navLinks.classList.remove('open');
+      menuOverlay.classList.remove('active');
+    });
+
+    // Mobile dropdown menu toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileDropdown = document.getElementById('mobileDropdown');
+    const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+
+    if (mobileMenuToggle && mobileDropdown) {
+      mobileMenuToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileDropdown.classList.toggle('show');
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function (e) {
+        if (!mobileMenuToggle.contains(e.target) && !mobileDropdown.contains(e.target)) {
+          mobileDropdown.classList.remove('show');
+        }
+      });
+    }
+
+    if (mobileCloseBtn) {
+      mobileCloseBtn.addEventListener('click', function () {
+        mobileDropdown.classList.remove('show');
+      });
+    }
+
+    // Product Modal Logic
+    const productCards = document.querySelectorAll('.product-card');
+    const modal = document.getElementById('productModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalName = document.getElementById('modalName');
+    const modalColorSwatch = document.getElementById('modalColorSwatch');
+    const modalColorName = document.getElementById('modalColorName');
+    const modalColorRow = document.querySelector('.modal-color-row');
+    let currentColorOption = null;
+    const modalSizeButtons = document.getElementById('modalSizeButtons');
+    const modalSizeNote = document.getElementById('modalSizeNote');
+    const modalQty = document.getElementById('modalQty');
+    const qtyMinus = document.getElementById('qtyMinus');
+    const qtyPlus = document.getElementById('qtyPlus');
+    const modalStock = document.getElementById('modalStock');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalStars = document.getElementById('modalStars');
+    const modalReviewCount = document.getElementById('modalReviewCount');
+    const modalAddToCart = document.getElementById('modalAddToCart');
+    const modalCloseX = document.getElementById('modalCloseX');
+
+    let selectedSize = null;
+    let currentQty = 1;
+
+    function renderStars(rating) {
+      let stars = '';
+      for (let i = 1; i <= 5; i++) {
+        stars += `<i class="fa${i <= rating ? 's' : 'r'} fa-star"></i>`;
+      }
+      return stars;
+    }
+
+    productCards.forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (e.target.classList.contains('add-to-cart')) return;
+        const img = card.querySelector('img');
+        modalName.textContent = card.getAttribute('data-name');
+        // Color options
+        const colorOptions = JSON.parse(card.getAttribute('data-coloroptions'));
+        modalColorRow.innerHTML = '';
+        colorOptions.forEach((opt, idx) => {
+          const swatch = document.createElement('span');
+          swatch.className = 'color-swatch';
+          swatch.style.background = opt.hex;
+          swatch.title = opt.name;
+          if (idx === 0) swatch.classList.add('selected');
+          swatch.onclick = function() {
+            document.querySelectorAll('.modal-color-row .color-swatch').forEach(s => s.classList.remove('selected'));
+            swatch.classList.add('selected');
+            // Only update color name, not image
+            modalColorName.textContent = opt.name;
+            currentColorOption = opt;
+          };
+          modalColorRow.appendChild(swatch);
+          if (idx === 0) {
+            modalImg.src = opt.image;
+            modalColorName.textContent = opt.name;
+            currentColorOption = opt;
+          }
+        });
+        // Sizes
+        const sizes = card.getAttribute('data-sizes').split(',');
+        modalSizeButtons.innerHTML = '';
+        sizes.forEach((size, idx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'size-btn';
+          btn.textContent = size;
+          btn.onclick = function() {
+            document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            selectedSize = size;
+            modalSizeNote.textContent = `Selected: ${size}`;
+          };
+          if (idx === 0) { btn.classList.add('selected'); selectedSize = size; modalSizeNote.textContent = `Selected: ${size}`; }
+          modalSizeButtons.appendChild(btn);
+        });
+        // Quantity
+        currentQty = 1;
+        modalQty.textContent = currentQty;
+        qtyMinus.onclick = function() { if (currentQty > 1) { currentQty--; modalQty.textContent = currentQty; } };
+        qtyPlus.onclick = function() { currentQty++; modalQty.textContent = currentQty; };
+        // Stock (example)
+        modalStock.textContent = 'Low stock';
+        // Price
+        const price = card.querySelector('.add-to-cart').getAttribute('data-price');
+        modalPrice.textContent = `RM ${parseFloat(price).toFixed(2)}`;
+        // Reviews
+        const reviews = JSON.parse(card.getAttribute('data-reviews'));
+        const avgRating = reviews.length ? 5 : 0; // Example: always 5 stars if reviews exist
+        modalStars.innerHTML = renderStars(avgRating);
+        modalReviewCount.textContent = `(${reviews.length})`;
+        // Add to Cart button
+        modalAddToCart.onclick = function() {
+          const id = card.getAttribute('data-id');
+          const name = card.getAttribute('data-name');
+          const image = img.src;
+          const size = selectedSize;
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const existingItem = cart.find(item => item.id === id && item.size === size);
+          if (existingItem) {
+            existingItem.quantity += currentQty;
+          } else {
+            cart.push({ id, name, price: parseFloat(price), image, size, quantity: currentQty });
+          }
+          localStorage.setItem('cart', JSON.stringify(cart));
+          updateCartCount();
+          modal.style.display = 'none';
+        };
+        modal.style.display = 'flex';
+        const modalWishlistBtn = document.getElementById('modalWishlistBtn');
+        if (modalWishlistBtn) {
+          modalWishlistBtn.setAttribute('data-id', card.getAttribute('data-id'));
+          updateWishlistButtons();
+        }
+      });
+    });
+    modalCloseX.addEventListener('click', () => { modal.style.display = 'none'; });
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+
+    // Filter & Sort Modal Logic
+    const openFilterSort = document.getElementById('openFilterSort');
+    const filterSortDropdown = document.getElementById('filterSortDropdown');
+    const filterSortForm = document.getElementById('filterSortForm');
+    const applyFilterSort = document.getElementById('applyFilterSort');
+    const resetFilterSort = document.getElementById('resetFilterSort');
+    const filterSortSection = document.getElementById('filterSortSection');
+
+    openFilterSort.onclick = (e) => {
+      e.stopPropagation();
+      const isOpen = filterSortSection.style.maxHeight && filterSortSection.style.maxHeight !== '0px';
+      if (isOpen) {
+        filterSortSection.style.maxHeight = '0';
+        filterSortSection.style.opacity = '0';
+      } else {
+        filterSortSection.style.maxHeight = filterSortSection.scrollHeight + 40 + 'px';
+        filterSortSection.style.opacity = '1';
+      }
+    };
+    document.addEventListener('click', (e) => {
+      if (!filterSortDropdown.contains(e.target) && e.target !== openFilterSort) {
+        filterSortDropdown.style.display = 'none';
+      }
+    });
+
+    function filterAndSortProducts() {
+      // Get selected sizes/colors
+      const sizes = Array.from(filterSortForm.querySelectorAll('input[name="size"]:checked')).map(cb => cb.value);
+      const colors = Array.from(filterSortForm.querySelectorAll('input[name="color"]:checked')).map(cb => cb.value);
+      const sort = filterSortForm.querySelector('select[name="sort"]').value;
+      let cards = Array.from(productCards);
+      // Filter
+      cards.forEach(card => {
+        const cardSizes = card.getAttribute('data-sizes').split(',');
+        const cardColorName = card.getAttribute('data-colorname');
+        let show = true;
+        if (sizes.length && !sizes.some(size => cardSizes.includes(size))) show = false;
+        if (colors.length && !colors.includes(cardColorName)) show = false;
+        card.style.display = show ? '' : 'none';
+      });
+      // Sort
+      let visibleCards = cards.filter(card => card.style.display !== 'none');
+      if (sort) {
+        if (sort === 'price-asc') visibleCards.sort((a, b) => parseFloat(a.querySelector('.add-to-cart').getAttribute('data-price')) - parseFloat(b.querySelector('.add-to-cart').getAttribute('data-price')));
+        if (sort === 'price-desc') visibleCards.sort((a, b) => parseFloat(b.querySelector('.add-to-cart').getAttribute('data-price')) - parseFloat(a.querySelector('.add-to-cart').getAttribute('data-price')));
+        if (sort === 'name-asc') visibleCards.sort((a, b) => a.getAttribute('data-name').localeCompare(b.getAttribute('data-name')));
+        if (sort === 'name-desc') visibleCards.sort((a, b) => b.getAttribute('data-name').localeCompare(a.getAttribute('data-name')));
+        // Reorder in DOM
+        const grid = document.querySelector('.products-grid');
+        visibleCards.forEach(card => grid.appendChild(card));
+      }
+    }
+    applyFilterSort.onclick = () => {
+      filterAndSortProducts();
+      filterSortSection.style.maxHeight = '0';
+      filterSortSection.style.opacity = '0';
+    };
+    resetFilterSort.onclick = () => {
+      filterSortForm.reset();
+      productCards.forEach(card => card.style.display = '');
+      filterAndSortProducts();
+      filterSortSection.style.maxHeight = '0';
+      filterSortSection.style.opacity = '0';
+    };
+  </script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  function getWishlist() {
+    return JSON.parse(localStorage.getItem('wishlist')) || [];
+  }
+  function setWishlist(wishlist) {
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  }
+  function updateWishlistButtons() {
+    const wishlist = getWishlist();
+    document.querySelectorAll('.add-wishlist-btn, .modal-wishlist-btn').forEach(btn => {
+      const id = btn.getAttribute('data-id');
+      const inWishlist = wishlist.some(item => String(item.id) === String(id));
+      btn.classList.toggle('in-wishlist', inWishlist);
+      btn.innerHTML = inWishlist ? '<i class="fa fa-heart"></i>' : '<i class="fa fa-heart-o"></i>';
+    });
+  }
+  function addToWishlist(item) {
+    let wishlist = getWishlist();
+    if (!wishlist.some(wi => String(wi.id) === String(item.id))) {
+      wishlist.push(item);
+      setWishlist(wishlist);
+      updateWishlistButtons();
+    }
+  }
+  function removeFromWishlist(id) {
+    let wishlist = getWishlist();
+    wishlist = wishlist.filter(wi => String(wi.id) !== String(id));
+    setWishlist(wishlist);
+    updateWishlistButtons();
+  }
+  // Main grid hearts
+  document.querySelectorAll('.add-wishlist-btn').forEach(btn => {
+    btn.onclick = function(e) {
+      e.stopPropagation();
+      const card = btn.closest('.product-card');
+      const id = card.getAttribute('data-id');
+      const name = card.getAttribute('data-name');
+      const image = card.querySelector('img').src;
+      const price = parseFloat(card.querySelector('.add-to-cart').getAttribute('data-price'));
+      if (btn.classList.contains('in-wishlist')) {
+        removeFromWishlist(id);
+      } else {
+        addToWishlist({ id, name, image, price });
+      }
+    };
+  });
+  // Modal heart
+  const modalWishlistBtn = document.getElementById('modalWishlistBtn');
+  if (modalWishlistBtn) {
+    modalWishlistBtn.onclick = function(e) {
+      e.stopPropagation();
+      const id = modalWishlistBtn.getAttribute('data-id');
+      const name = document.getElementById('modalName').textContent;
+      const image = document.getElementById('modalImg').src;
+      const price = parseFloat(document.getElementById('modalPrice').textContent.replace(/[^\d.]/g, ''));
+      if (modalWishlistBtn.classList.contains('in-wishlist')) {
+        removeFromWishlist(id);
+      } else {
+        addToWishlist({ id, name, image, price });
+      }
+    };
+  }
+  updateWishlistButtons();
+    });
+  </script>
+</body>
+
+</html>
